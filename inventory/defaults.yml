@@ -1,0 +1,8 @@
+---
+# Nornir Defaults File
+platform: cisco_ios
+port: 22
+username: "wade"
+password: "wade"
+
+

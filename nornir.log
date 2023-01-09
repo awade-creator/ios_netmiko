@@ -1,0 +1,1613 @@
+2023-01-09 01:51:20,696 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int br'} on 2 hosts
+2023-01-09 01:51:23,418 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\client.py", line 450, in connect
+    self._auth(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\client.py", line 781, in _auth
+    raise saved_exception
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\client.py", line 768, in _auth
+    self._transport.auth_password(username, password)
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\transport.py", line 1564, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\connections\netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1083, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios 192.168.1.17:22
+
+
+Authentication failed.
+
+2023-01-09 01:51:23,419 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\client.py", line 450, in connect
+    self._auth(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\client.py", line 781, in _auth
+    raise saved_exception
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\client.py", line 768, in _auth
+    self._transport.auth_password(username, password)
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\transport.py", line 1564, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\connections\netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1083, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios 192.168.1.16:22
+
+
+Authentication failed.
+
+2023-01-09 01:52:04,069 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int br'} on 2 hosts
+2023-01-09 01:52:06,823 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\client.py", line 450, in connect
+    self._auth(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\client.py", line 781, in _auth
+    raise saved_exception
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\client.py", line 768, in _auth
+    self._transport.auth_password(username, password)
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\transport.py", line 1564, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\connections\netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1083, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios 192.168.1.16:22
+
+
+Authentication failed.
+
+2023-01-09 01:52:06,824 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\client.py", line 450, in connect
+    self._auth(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\client.py", line 781, in _auth
+    raise saved_exception
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\client.py", line 768, in _auth
+    self._transport.auth_password(username, password)
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\transport.py", line 1564, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\connections\netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1083, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios 192.168.1.17:22
+
+
+Authentication failed.
+
+2023-01-09 01:53:22,990 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int br'} on 2 hosts
+2023-01-09 01:53:25,679 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\client.py", line 450, in connect
+    self._auth(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\client.py", line 781, in _auth
+    raise saved_exception
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\client.py", line 768, in _auth
+    self._transport.auth_password(username, password)
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\transport.py", line 1564, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\connections\netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1083, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios 192.168.1.16:22
+
+
+Authentication failed.
+
+2023-01-09 01:53:25,679 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\client.py", line 450, in connect
+    self._auth(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\client.py", line 781, in _auth
+    raise saved_exception
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\client.py", line 768, in _auth
+    self._transport.auth_password(username, password)
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\transport.py", line 1564, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\connections\netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1083, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios 192.168.1.17:22
+
+
+Authentication failed.
+
+2023-01-09 10:50:41,943 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int br'} on 2 hosts
+2023-01-09 10:50:44,554 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\client.py", line 450, in connect
+    self._auth(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\client.py", line 781, in _auth
+    raise saved_exception
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\client.py", line 768, in _auth
+    self._transport.auth_password(username, password)
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\transport.py", line 1564, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\connections\netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1083, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios 192.168.1.16:22
+
+
+Authentication failed.
+
+2023-01-09 10:50:44,555 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\client.py", line 450, in connect
+    self._auth(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\client.py", line 781, in _auth
+    raise saved_exception
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\client.py", line 768, in _auth
+    self._transport.auth_password(username, password)
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\transport.py", line 1564, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\paramiko\auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\connections\netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1083, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios 192.168.1.17:22
+
+
+Authentication failed.
+
+2023-01-09 10:55:46,268 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int br'} on 2 hosts
+2023-01-09 10:55:46,271 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\connections\netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BaseConnection.__init__() got an unexpected keyword argument 'auth_strict_key'
+
+2023-01-09 10:55:46,272 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\connections\netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BaseConnection.__init__() got an unexpected keyword argument 'auth_strict_key'
+
+2023-01-09 11:02:24,129 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int br'} on 2 hosts
+2023-01-09 11:04:26,258 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int br'} on 2 hosts
+2023-01-09 11:05:29,605 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': ['show ip int br', 'show ip arp']} on 2 hosts
+2023-01-09 11:05:30,466 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1662, in send_command
+    command_string = self.normalize_cmd(command_string)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1879, in normalize_cmd
+    command = command.rstrip()
+              ^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'rstrip'
+
+2023-01-09 11:05:30,467 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1662, in send_command
+    command_string = self.normalize_cmd(command_string)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1879, in normalize_cmd
+    command = command.rstrip()
+              ^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'rstrip'
+
+2023-01-09 11:13:46,743 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int br'} on 2 hosts
+2023-01-09 11:13:59,553 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int br'} on 2 hosts
+2023-01-09 11:14:36,165 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip arp'} on 2 hosts
+2023-01-09 11:18:41,621 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int br'} on 2 hosts
+2023-01-09 11:24:34,696 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int br'} on 2 hosts
+2023-01-09 11:28:09,377 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int br'} on 2 hosts
+2023-01-09 11:29:34,661 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': None} on 2 hosts
+2023-01-09 11:29:35,485 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1662, in send_command
+    command_string = self.normalize_cmd(command_string)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1879, in normalize_cmd
+    command = command.rstrip()
+              ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'rstrip'
+
+2023-01-09 11:29:35,486 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1662, in send_command
+    command_string = self.normalize_cmd(command_string)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1879, in normalize_cmd
+    command = command.rstrip()
+              ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'rstrip'
+
+2023-01-09 11:31:18,667 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': None} on 2 hosts
+2023-01-09 11:31:19,530 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1662, in send_command
+    command_string = self.normalize_cmd(command_string)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1879, in normalize_cmd
+    command = command.rstrip()
+              ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'rstrip'
+
+2023-01-09 11:31:19,531 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1662, in send_command
+    command_string = self.normalize_cmd(command_string)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1879, in normalize_cmd
+    command = command.rstrip()
+              ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'rstrip'
+
+2023-01-09 11:32:09,232 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': None} on 2 hosts
+2023-01-09 11:32:10,091 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1662, in send_command
+    command_string = self.normalize_cmd(command_string)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1879, in normalize_cmd
+    command = command.rstrip()
+              ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'rstrip'
+
+2023-01-09 11:32:10,110 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1662, in send_command
+    command_string = self.normalize_cmd(command_string)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1879, in normalize_cmd
+    command = command.rstrip()
+              ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'rstrip'
+
+2023-01-09 11:32:41,626 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': None} on 2 hosts
+2023-01-09 11:32:42,520 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1662, in send_command
+    command_string = self.normalize_cmd(command_string)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1879, in normalize_cmd
+    command = command.rstrip()
+              ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'rstrip'
+
+2023-01-09 11:32:42,529 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1662, in send_command
+    command_string = self.normalize_cmd(command_string)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1879, in normalize_cmd
+    command = command.rstrip()
+              ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'rstrip'
+
+2023-01-09 11:33:27,545 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int br'} on 2 hosts
+2023-01-09 11:34:01,662 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int br'} on 2 hosts
+2023-01-09 11:36:11,855 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': None} on 2 hosts
+2023-01-09 11:36:12,955 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1662, in send_command
+    command_string = self.normalize_cmd(command_string)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1879, in normalize_cmd
+    command = command.rstrip()
+              ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'rstrip'
+
+2023-01-09 11:36:12,956 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1662, in send_command
+    command_string = self.normalize_cmd(command_string)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1879, in normalize_cmd
+    command = command.rstrip()
+              ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'rstrip'
+
+2023-01-09 11:36:26,801 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': None} on 2 hosts
+2023-01-09 11:36:27,847 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1662, in send_command
+    command_string = self.normalize_cmd(command_string)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1879, in normalize_cmd
+    command = command.rstrip()
+              ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'rstrip'
+
+2023-01-09 11:36:27,888 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1662, in send_command
+    command_string = self.normalize_cmd(command_string)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1879, in normalize_cmd
+    command = command.rstrip()
+              ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'rstrip'
+
+2023-01-09 11:59:11,328 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_commands' with args {} on 2 hosts
+2023-01-09 11:59:11,332 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2023-01-09 11:59:11,332 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2023-01-09 11:59:11,333 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_commands' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\configurations.py", line 20, in netmiko_send_commands
+    task.run(task=netmiko_send_command, commnad_string=triage())
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-01-09 11:59:11,333 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_commands' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\configurations.py", line 20, in netmiko_send_commands
+    task.run(task=netmiko_send_command, commnad_string=triage())
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-01-09 12:02:35,534 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_commands' with args {} on 2 hosts
+2023-01-09 12:02:35,536 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2023-01-09 12:02:35,536 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2023-01-09 12:02:35,536 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_commands' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\configurations.py", line 16, in netmiko_send_commands
+    task.run(task=netmiko_send_command, commnad_string=output)
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-01-09 12:02:35,537 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_commands' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\configurations.py", line 16, in netmiko_send_commands
+    task.run(task=netmiko_send_command, commnad_string=output)
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-01-09 12:06:02,896 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_commands' with args {} on 2 hosts
+2023-01-09 12:06:02,898 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2023-01-09 12:06:02,898 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2023-01-09 12:06:02,899 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_commands' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\configurations.py", line 16, in netmiko_send_commands
+    task.run(task=netmiko_send_command, commnad_string=output)
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-01-09 12:06:02,899 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_commands' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\configurations.py", line 16, in netmiko_send_commands
+    task.run(task=netmiko_send_command, commnad_string=output)
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-01-09 12:06:48,912 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_commands' with args {} on 2 hosts
+2023-01-09 12:06:48,913 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2023-01-09 12:06:48,914 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2023-01-09 12:06:48,914 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_commands' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\configurations.py", line 16, in netmiko_send_commands
+    task.run(task=netmiko_send_command, commnad_string=command)
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-01-09 12:06:48,915 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_commands' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\configurations.py", line 16, in netmiko_send_commands
+    task.run(task=netmiko_send_command, commnad_string=command)
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-01-09 12:07:30,229 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_commands' with args {} on 2 hosts
+2023-01-09 12:07:30,230 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2023-01-09 12:07:30,231 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2023-01-09 12:07:30,231 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_commands' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\configurations.py", line 16, in netmiko_send_commands
+    task.run(task=netmiko_send_command, commnad_string=command)
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-01-09 12:07:30,232 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_commands' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\configurations.py", line 16, in netmiko_send_commands
+    task.run(task=netmiko_send_command, commnad_string=command)
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-01-09 12:09:20,522 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_commands' with args {} on 2 hosts
+2023-01-09 12:09:20,524 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2023-01-09 12:09:20,525 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2023-01-09 12:09:20,525 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_commands' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\configurations.py", line 16, in netmiko_send_commands
+    task.run(task=netmiko_send_command, commnad_string="show ip int br | exclude unassigned")
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-01-09 12:09:20,525 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_commands' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\configurations.py", line 16, in netmiko_send_commands
+    task.run(task=netmiko_send_command, commnad_string="show ip int br | exclude unassigned")
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-01-09 12:12:03,105 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_commands' with args {'command_string': <function netmiko_send_commands at 0x000001B1E11FDBC0>} on 2 hosts
+2023-01-09 12:12:03,107 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_commands' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: netmiko_send_commands() got an unexpected keyword argument 'command_string'
+
+2023-01-09 12:12:03,107 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_commands' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: netmiko_send_commands() got an unexpected keyword argument 'command_string'
+
+2023-01-09 12:12:34,676 -  nornir.core -     INFO -        run() - Running task 'nornir.core.task' with args {} on 2 hosts
+2023-01-09 12:12:34,678 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'nornir.core.task' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'module' object is not callable
+
+2023-01-09 12:12:34,678 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'nornir.core.task' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'module' object is not callable
+
+2023-01-09 12:14:20,195 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': <function netmiko_send_command at 0x000001E96F084860>} on 2 hosts
+2023-01-09 12:14:20,788 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 2149, in send_config_set
+    raise ValueError("Invalid argument passed into send_config_set")
+ValueError: Invalid argument passed into send_config_set
+
+2023-01-09 12:14:20,798 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 2149, in send_config_set
+    raise ValueError("Invalid argument passed into send_config_set")
+ValueError: Invalid argument passed into send_config_set
+
+2023-01-09 12:14:42,223 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'commnad_string': <function netmiko_send_command at 0x000001DDA12D4860>} on 2 hosts
+2023-01-09 12:14:42,780 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_config.py", line 42, in netmiko_send_config
+    raise ValueError("Must specify either config_commands or config_file")
+ValueError: Must specify either config_commands or config_file
+
+2023-01-09 12:14:42,990 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_config.py", line 42, in netmiko_send_config
+    raise ValueError("Must specify either config_commands or config_file")
+ValueError: Must specify either config_commands or config_file
+
+2023-01-09 12:16:06,148 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': ['show ip int br | exclude unassigned', 'show ip arp', 'show ip route', 'show ip protocols']} on 2 hosts
+2023-01-09 12:16:06,993 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1662, in send_command
+    command_string = self.normalize_cmd(command_string)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1879, in normalize_cmd
+    command = command.rstrip()
+              ^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'rstrip'
+
+2023-01-09 12:16:06,994 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1662, in send_command
+    command_string = self.normalize_cmd(command_string)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1879, in normalize_cmd
+    command = command.rstrip()
+              ^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'rstrip'
+
+2023-01-09 12:19:17,245 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': ['show ip int br | exclude unassigned', 'show ip arp', 'show ip route', 'show ip protocols']} on 2 hosts
+2023-01-09 12:19:18,100 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1662, in send_command
+    command_string = self.normalize_cmd(command_string)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1879, in normalize_cmd
+    command = command.rstrip()
+              ^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'rstrip'
+
+2023-01-09 12:19:18,100 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1662, in send_command
+    command_string = self.normalize_cmd(command_string)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1879, in normalize_cmd
+    command = command.rstrip()
+              ^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'rstrip'
+
+2023-01-09 12:24:36,612 -  nornir.core -     INFO -        run() - Running task 'send_commands' with args {'commands': ['show ip int br | exclude unassigned', 'show ip arp', 'show ip route', 'show ip protocols']} on 2 hosts
+2023-01-09 12:24:36,626 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_commands' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_scrapli\tasks\core\send_commands.py", line 43, in send_commands
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_scrapli\connection.py", line 98, in open
+    connection = Scrapli(**parameters, platform=final_platform)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\scrapli\factory.py", line 506, in __new__
+    final_conn = final_driver(**final_kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\scrapli\driver\core\cisco_iosxe\sync_driver.py", line 127, in __init__
+    super().__init__(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\scrapli\driver\network\sync_driver.py", line 48, in __init__
+    super().__init__(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\scrapli\driver\generic\sync_driver.py", line 47, in __init__
+    super().__init__(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\scrapli\driver\base\sync_driver.py", line 15, in __init__
+    super().__init__(**kwargs)
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\scrapli\driver\base\base_driver.py", line 187, in __init__
+    self.transport = transport_class(
+                     ^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\scrapli\transport\plugins\system\transport.py", line 60, in __init__
+    raise ScrapliUnsupportedPlatform("system transport is not supported on windows devices")
+scrapli.exceptions.ScrapliUnsupportedPlatform: system transport is not supported on windows devices
+
+2023-01-09 12:24:36,626 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_commands' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_scrapli\tasks\core\send_commands.py", line 43, in send_commands
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_scrapli\connection.py", line 98, in open
+    connection = Scrapli(**parameters, platform=final_platform)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\scrapli\factory.py", line 506, in __new__
+    final_conn = final_driver(**final_kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\scrapli\driver\core\cisco_iosxe\sync_driver.py", line 127, in __init__
+    super().__init__(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\scrapli\driver\network\sync_driver.py", line 48, in __init__
+    super().__init__(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\scrapli\driver\generic\sync_driver.py", line 47, in __init__
+    super().__init__(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\scrapli\driver\base\sync_driver.py", line 15, in __init__
+    super().__init__(**kwargs)
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\scrapli\driver\base\base_driver.py", line 187, in __init__
+    self.transport = transport_class(
+                     ^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\scrapli\transport\plugins\system\transport.py", line 60, in __init__
+    raise ScrapliUnsupportedPlatform("system transport is not supported on windows devices")
+scrapli.exceptions.ScrapliUnsupportedPlatform: system transport is not supported on windows devices
+
+2023-01-09 12:26:00,019 -  nornir.core -     INFO -        run() - Running task 'send_commands' with args {'commands': ['show ip int br | exclude unassigned']} on 2 hosts
+2023-01-09 12:26:00,028 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_commands' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_scrapli\tasks\core\send_commands.py", line 43, in send_commands
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_scrapli\connection.py", line 98, in open
+    connection = Scrapli(**parameters, platform=final_platform)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\scrapli\factory.py", line 506, in __new__
+    final_conn = final_driver(**final_kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\scrapli\driver\core\cisco_iosxe\sync_driver.py", line 127, in __init__
+    super().__init__(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\scrapli\driver\network\sync_driver.py", line 48, in __init__
+    super().__init__(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\scrapli\driver\generic\sync_driver.py", line 47, in __init__
+    super().__init__(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\scrapli\driver\base\sync_driver.py", line 15, in __init__
+    super().__init__(**kwargs)
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\scrapli\driver\base\base_driver.py", line 187, in __init__
+    self.transport = transport_class(
+                     ^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\scrapli\transport\plugins\system\transport.py", line 60, in __init__
+    raise ScrapliUnsupportedPlatform("system transport is not supported on windows devices")
+scrapli.exceptions.ScrapliUnsupportedPlatform: system transport is not supported on windows devices
+
+2023-01-09 12:26:00,030 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_commands' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_scrapli\tasks\core\send_commands.py", line 43, in send_commands
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_scrapli\connection.py", line 98, in open
+    connection = Scrapli(**parameters, platform=final_platform)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\scrapli\factory.py", line 506, in __new__
+    final_conn = final_driver(**final_kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\scrapli\driver\core\cisco_iosxe\sync_driver.py", line 127, in __init__
+    super().__init__(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\scrapli\driver\network\sync_driver.py", line 48, in __init__
+    super().__init__(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\scrapli\driver\generic\sync_driver.py", line 47, in __init__
+    super().__init__(
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\scrapli\driver\base\sync_driver.py", line 15, in __init__
+    super().__init__(**kwargs)
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\scrapli\driver\base\base_driver.py", line 187, in __init__
+    self.transport = transport_class(
+                     ^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\scrapli\transport\plugins\system\transport.py", line 60, in __init__
+    raise ScrapliUnsupportedPlatform("system transport is not supported on windows devices")
+scrapli.exceptions.ScrapliUnsupportedPlatform: system transport is not supported on windows devices
+
+2023-01-09 12:52:43,297 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['show ip int br | exclude unassigned', 'show ip arpshow ip route', 'show ip protocols']} on 2 hosts
+2023-01-09 13:00:37,560 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'config_commands': ['show ip int br | exclude unassigned', 'show ip arpshow ip route', 'show ip protocols']} on 2 hosts
+2023-01-09 13:00:37,563 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2023-01-09 13:00:37,563 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2023-01-09 13:00:53,538 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': ['show ip int br | exclude unassigned', 'show ip arpshow ip route', 'show ip protocols']} on 2 hosts
+2023-01-09 13:00:54,179 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1662, in send_command
+    command_string = self.normalize_cmd(command_string)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1879, in normalize_cmd
+    command = command.rstrip()
+              ^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'rstrip'
+
+2023-01-09 13:00:54,329 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1662, in send_command
+    command_string = self.normalize_cmd(command_string)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1879, in normalize_cmd
+    command = command.rstrip()
+              ^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'rstrip'
+
+2023-01-09 13:05:16,485 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': ('show ip int br | exclude unassigned', 'show ip arpshow ip route', 'show ip protocols')} on 2 hosts
+2023-01-09 13:05:17,093 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1662, in send_command
+    command_string = self.normalize_cmd(command_string)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1879, in normalize_cmd
+    command = command.rstrip()
+              ^^^^^^^^^^^^^^
+AttributeError: 'tuple' object has no attribute 'rstrip'
+
+2023-01-09 13:05:17,266 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1662, in send_command
+    command_string = self.normalize_cmd(command_string)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1879, in normalize_cmd
+    command = command.rstrip()
+              ^^^^^^^^^^^^^^
+AttributeError: 'tuple' object has no attribute 'rstrip'
+
+2023-01-09 13:13:40,724 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': ['show ip int br | exclude unassigned', 'show ip arpshow ip route', 'show ip protocols']} on 2 hosts
+2023-01-09 13:13:41,394 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1662, in send_command
+    command_string = self.normalize_cmd(command_string)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1879, in normalize_cmd
+    command = command.rstrip()
+              ^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'rstrip'
+
+2023-01-09 13:13:41,395 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1662, in send_command
+    command_string = self.normalize_cmd(command_string)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1879, in normalize_cmd
+    command = command.rstrip()
+              ^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'rstrip'
+
+2023-01-09 13:14:33,940 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': ['show ip int br | exclude unassigned', 'show ip arpshow ip route', 'show ip protocols']} on 2 hosts
+2023-01-09 13:14:34,826 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1662, in send_command
+    command_string = self.normalize_cmd(command_string)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1879, in normalize_cmd
+    command = command.rstrip()
+              ^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'rstrip'
+
+2023-01-09 13:14:34,830 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1662, in send_command
+    command_string = self.normalize_cmd(command_string)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1879, in normalize_cmd
+    command = command.rstrip()
+              ^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'rstrip'
+
+2023-01-09 13:18:26,120 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': ['show ip int br | exclude unassigned', 'show ip arpshow ip route', 'show ip protocols']} on 2 hosts
+2023-01-09 13:18:26,798 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1662, in send_command
+    command_string = self.normalize_cmd(command_string)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1879, in normalize_cmd
+    command = command.rstrip()
+              ^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'rstrip'
+
+2023-01-09 13:18:26,798 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1662, in send_command
+    command_string = self.normalize_cmd(command_string)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1879, in normalize_cmd
+    command = command.rstrip()
+              ^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'rstrip'
+
+2023-01-09 13:18:49,263 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': ['show ip int br | exclude unassigned', 'show ip arpshow ip route', 'show ip protocols']} on 2 hosts
+2023-01-09 13:18:49,894 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1662, in send_command
+    command_string = self.normalize_cmd(command_string)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1879, in normalize_cmd
+    command = command.rstrip()
+              ^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'rstrip'
+
+2023-01-09 13:18:49,896 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1662, in send_command
+    command_string = self.normalize_cmd(command_string)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1879, in normalize_cmd
+    command = command.rstrip()
+              ^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'rstrip'
+
+2023-01-09 13:19:14,218 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': ['show ip int br | exclude unassigned', 'show ip arpshow ip route', 'show ip protocols']} on 2 hosts
+2023-01-09 13:19:15,050 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1662, in send_command
+    command_string = self.normalize_cmd(command_string)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1879, in normalize_cmd
+    command = command.rstrip()
+              ^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'rstrip'
+
+2023-01-09 13:19:15,052 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1662, in send_command
+    command_string = self.normalize_cmd(command_string)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1879, in normalize_cmd
+    command = command.rstrip()
+              ^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'rstrip'
+
+2023-01-09 13:19:38,890 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': ['show ip int br | exclude unassigned', 'show ip arpshow ip route', 'show ip protocols']} on 2 hosts
+2023-01-09 13:19:39,719 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1662, in send_command
+    command_string = self.normalize_cmd(command_string)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1879, in normalize_cmd
+    command = command.rstrip()
+              ^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'rstrip'
+
+2023-01-09 13:19:39,721 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1662, in send_command
+    command_string = self.normalize_cmd(command_string)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthe\PycharmProjects\ios\venv\Lib\site-packages\netmiko\base_connection.py", line 1879, in normalize_cmd
+    command = command.rstrip()
+              ^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'rstrip'
+
+2023-01-09 13:44:47,122 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int br | exclude unassigned'} on 2 hosts
+2023-01-09 13:46:44,006 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int br | exclude unassigned'} on 2 hosts
+2023-01-09 13:47:47,678 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 's/nh/no/nw/n /ni/np/n /ni/nn/nt/n /nb/nr/n /n|/n /ne/nx/nc/nl/nu/nd/ne/n /nu/nn/na/ns/ns/ni/ng/nn/ne/nd'} on 2 hosts
+2023-01-09 13:52:51,085 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_commands_example' with args {} on 2 hosts
+2023-01-09 13:54:44,389 -  nornir.core -     INFO -        run() - Running task 'triage' with args {} on 2 hosts

@@ -1,0 +1,7 @@
+---
+# Nornir Groups File
+router:
+  platform: ios
+  data:
+    role: edge
+
